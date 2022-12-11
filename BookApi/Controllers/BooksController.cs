@@ -1,19 +1,40 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using BookApi.Converters;
+using BookApi.Repositories;
+using BookStore.Models.Dtos;
+using Microsoft.AspNetCore.Mvc;
 
 namespace BookApi.Controllers
 {
-    public class BooksController : Controller
+
+    [Route("api/[controller]")]
+    [ApiController]
+    public class BooksController : ControllerBase
     {
-        public BooksController()
+        private readonly IProductRepository productRepository;
+
+        public BooksController(IProductRepository productRepository)
         {
-           
+            this.productRepository = productRepository;
         }
-
-
-        [HttpGet(Name = "GetBookList")]
-        public async Task<IActionResult> Get()
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<BooksDto>>> GetBooks()
         {
-            return Ok("success");
+            try
+            {
+                var books = await productRepository.GetBooks();
+                var booksCategories = await productRepository.GetCategories();
+                if (books == null || booksCategories == null)
+                {
+                    return NotFound();
+                }
+                else {
+                    var booksDto = books.ConvertToDto(booksCategories);
+                    return Ok(booksDto);
+                }
+            
+            } catch (Exception) {
+                return StatusCode(StatusCodes.Status500InternalServerError, "Error Retreiving data from the database");
+            }
         }
     }
 }

@@ -1,4 +1,5 @@
 using BookApi.Data;
+using BookApi.Repositories;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -13,7 +14,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContextPool<ShopDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("ShopBookOnlineConnection"))
 );
-
+builder.Services.AddScoped<IProductRepository, ProductRepoImpl>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
