@@ -16,22 +16,38 @@
 
 
         @if(productCount > 0)
-        {
-            const int itemPerRow = 4;
-            var productRowList = new List<ProductDto>(); 
+         {
+                    var groupedProductsByCategory = from product in Products
+                                                    group product by product.CategoryID into prodByCatGroup
+                                                    orderby prodByCatGroup.Key
+                                                    select prodByCatGroup; 
 
 
 
-            @for (int i = 0; i<productCount; i++)
-              {
-                productRowList = Products.Skip(i * itemPerRow).Take(itemPerRow).ToList();
+
+              @*const int itemPerRow = 4;
+              var productRowList = new List<ProductDto>(); 
+
+
+
+               @for (int i = 0; i<productCount; i++)
+                {
+                 productRowList = Products.Skip(i * itemPerRow).Take(itemPerRow).ToList();*@
 
                     <div class="row mt-3">
 
-                        <DisplayProducts Products ="@productRowList"></DisplayProducts>
-                       </div> 
+
+                        <h4> @prodGroup.FirstOrDefault(pg=>pg.CategoryID == prodGroup.Key).CategoryName</h4>
+                        @foreach(var prodGroup in groupedProductsByCategory)
+                     {
+                        <DisplayProducts Products= "@prodGroup"></DisplayProducts>
+                        
+                     }
+
+                    </div>
+                    <hr class="mb-3"/>
                   
-              }
+              
 
         }
     }
