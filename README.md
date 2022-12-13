@@ -71,7 +71,10 @@ There are three solutions in this project for Blazor, Web Api and Unit and Inegr
 > **_Test Case repository :_** Still researching, the ways to mock a repository into the test cases.
 
 
-
+### Results
+Web Api Completed Successfully
+Created migration and database created
+Data from the database is shown in the API
 ![Screenshot (271)](https://user-images.githubusercontent.com/105890585/207235328-108414e2-cf5c-4f6c-a819-0aabf9e319e1.png)
 
 
