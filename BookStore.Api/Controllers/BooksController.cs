@@ -11,13 +11,18 @@ namespace BookApi.Controllers
     public class BooksController : ControllerBase
     {
         private readonly IProductRepository productRepository;
+      
 
         public BooksController(IProductRepository productRepository)
         {
             this.productRepository = productRepository;
+           
         }
+
+        //public async Task<ActionResult<IEnumerable<BooksDto>>> GetBooks()
+
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<BooksDto>>> GetBooks()
+        public async Task<IActionResult> GetBooks()
         {
             try
             {
