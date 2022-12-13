@@ -3,13 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32901.215
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookStore", "BookStore\BookStore.csproj", "{80B12B6D-B571-482C-A6FB-1486D3802B10}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookStore.Web", "BookStore.Web\BookStore.Web.csproj", "{3E39E939-5CBA-437C-A2BF-3944144CC2A7}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestBookProject", "TestBookProject\TestBookProject.csproj", "{43038524-CE52-4A37-B1E8-B88C609EBD1F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookStore.Api", "BookStore.Api\BookStore.Api.csproj", "{3D62EFC2-41E2-4653-8AB3-99292CC793C2}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookApi", "BookApi\BookApi.csproj", "{29A6B8C1-3A62-400B-8206-541BC7FF4272}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookStore.Models", "BookStore.Models\BookStore.Models.csproj", "{951BBC25-AF10-4AB5-AAED-436D1CC38896}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Books.Models", "Books.Models\Books.Models.csproj", "{637DB290-7EF5-4151-8CC2-B4DFA3AA8FB0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,27 +15,23 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{80B12B6D-B571-482C-A6FB-1486D3802B10}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{80B12B6D-B571-482C-A6FB-1486D3802B10}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{80B12B6D-B571-482C-A6FB-1486D3802B10}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{80B12B6D-B571-482C-A6FB-1486D3802B10}.Release|Any CPU.Build.0 = Release|Any CPU
-		{43038524-CE52-4A37-B1E8-B88C609EBD1F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{43038524-CE52-4A37-B1E8-B88C609EBD1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{43038524-CE52-4A37-B1E8-B88C609EBD1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{43038524-CE52-4A37-B1E8-B88C609EBD1F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{29A6B8C1-3A62-400B-8206-541BC7FF4272}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{29A6B8C1-3A62-400B-8206-541BC7FF4272}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{29A6B8C1-3A62-400B-8206-541BC7FF4272}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{29A6B8C1-3A62-400B-8206-541BC7FF4272}.Release|Any CPU.Build.0 = Release|Any CPU
-		{951BBC25-AF10-4AB5-AAED-436D1CC38896}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{951BBC25-AF10-4AB5-AAED-436D1CC38896}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{951BBC25-AF10-4AB5-AAED-436D1CC38896}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{951BBC25-AF10-4AB5-AAED-436D1CC38896}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3E39E939-5CBA-437C-A2BF-3944144CC2A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E39E939-5CBA-437C-A2BF-3944144CC2A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E39E939-5CBA-437C-A2BF-3944144CC2A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E39E939-5CBA-437C-A2BF-3944144CC2A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D62EFC2-41E2-4653-8AB3-99292CC793C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D62EFC2-41E2-4653-8AB3-99292CC793C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D62EFC2-41E2-4653-8AB3-99292CC793C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D62EFC2-41E2-4653-8AB3-99292CC793C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{637DB290-7EF5-4151-8CC2-B4DFA3AA8FB0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{637DB290-7EF5-4151-8CC2-B4DFA3AA8FB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{637DB290-7EF5-4151-8CC2-B4DFA3AA8FB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{637DB290-7EF5-4151-8CC2-B4DFA3AA8FB0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {F86D44C5-A91A-4218-A587-6B77D4C5FAF3}
+		SolutionGuid = {E76AEA7D-AD7E-4845-AC9B-5E3D59040047}
 	EndGlobalSection
 EndGlobal
