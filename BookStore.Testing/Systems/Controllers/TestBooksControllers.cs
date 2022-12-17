@@ -16,6 +16,7 @@ namespace BookStore.Testing.Systems.Controllers
             var mokRepo = new Mock<IProductRepository>();
             var controller = new BooksController(mokRepo.Object);
 
+
             var result = (OkObjectResult)await controller.GetBooks();
 
             result.StatusCode.Should().Be(200);
