@@ -62,6 +62,7 @@ There are three solutions in this project for Blazor, Web Api and Unit and Inegr
 
 > **_Repositoory Interface created and Implemented :_**  Repository created with the basic CRUD operations and dependency injection added in app file.
 
+> **_Razor solution connected with API :_**  Created a new products page to display the lsit of books. The page is showing a list Books from the database
 ### Issues Faced
 
 
@@ -76,6 +77,9 @@ Web Api Completed Successfully
 Created migration and database created
 Data from the database is shown in the API
 ![Screenshot (271)](https://user-images.githubusercontent.com/105890585/207235328-108414e2-cf5c-4f6c-a819-0aabf9e319e1.png)
+Fetching data from the api and is shown as a list of books using bootsrap cards.
+![Screenshot (273)](https://user-images.githubusercontent.com/105890585/208214505-ab44662f-428a-4016-b774-2e817c4aac8e.png)
+
 
 
  
