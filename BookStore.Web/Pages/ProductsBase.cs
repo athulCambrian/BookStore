@@ -1,7 +1,8 @@
 ﻿using System;
-using BookStore.Services.Contracts;
+
 using Microsoft.AspNetCore.Components;
 using BookStore.Models.Dtos; //(soln for error in ln 14)
+using BookStore.Web.Services.Contracts;
 
 namespace BookStore.Pages
 {
@@ -9,15 +10,15 @@ namespace BookStore.Pages
 	{
 
 		[Inject]
-	  public iProductService ProductService { get; set; }
+	  public IBookService BookService { get; set; }
 
-		public IEnumerable<ProductDto> Products { get; set; }
+		public IEnumerable<BooksDto> Products { get; set; }
 
         protected override async Task OnInitializedAsync()
         {
-            Products = await ProductService.GetItems();
+            Products = await BookService.getItems();
              
         }
-    }
+    }  
 }
 
