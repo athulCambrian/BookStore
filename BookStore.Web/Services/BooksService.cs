@@ -13,12 +13,14 @@ namespace BookStore.Web.Services
             this.httpClient=httpClient;
         }
 
-        public async Task<IEnumerable<BooksDto>> getItems()
+        public async Task<IEnumerable<BooksDto>> GetItems()
         {
             try {
-                var books = await this.httpClient.GetFromJsonAsync<IEnumerable<BooksDto>>("api/getbooks");
+                var books = await this.httpClient.GetFromJsonAsync<IEnumerable<BooksDto>>("api/Books");
                 return books;
-                    }catch(Exception ex) {
+                    
+            }catch(Exception ex) {
+                throw;
             }
         }
     }

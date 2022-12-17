@@ -4,6 +4,6 @@ namespace BookStore.Web.Services.Contracts
 {
     public interface IBookService
     {
-        Task<IEnumerable<BooksDto>> getItems();
+        Task<IEnumerable<BooksDto>> GetItems();
     }
 }

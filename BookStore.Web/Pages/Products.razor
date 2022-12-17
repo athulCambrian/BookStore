@@ -1,51 +1,47 @@
 ﻿@page "/"
+@using BookStore.Pages;
+@inherits ProductBase 
 
-@inherits ProductsBase
-
-
-
-@if (Products == null)
+@if (Productss == null)
+{
+    <h3>Loading Books...</h3>
+}
+else
+{
+    <h3 class="mb-5">Books</h3>
+    var booksCount = Productss.Count();
+    @if (booksCount > 0)
     {
-        <h3>Loading products...</h3>
-    }
-    else
-    {
-        <h3 class="mb-5">Products</h3>
-        var productCount = Products.Count();
-
-
-
-        @if(productCount > 0)
-         {
-                                        const int itemPerRow = 4;
+        const int itemsperrow = 4;
         var productRowList = new List<BooksDto>();
-        @for (int i = 0; i < productCount; i++)
+        @for (int i = 0; i < booksCount; i++)
         {
-            productRowList = Products.Skip(i * itemPerRow).Take(itemPerRow).ToList();
+            productRowList = Productss.Skip(i * itemsperrow).Take(itemsperrow).ToList();
 
             <div class="row mt-3">
-                @foreach (var item in productRowList)
+                @foreach(var item in productRowList)
                 {
                     <div class="col-md-3 mb-2">
-                        <a href="#">
-                            <div class="card">
-                                <img class="img-thumbnail"/>
+                       <a href="#">
+                           <div class="card">
+                                <img class="img-thumbnail" src="https://images-cdn.reedsy.com/discovery/post/75/featured_image/b3af2f6e06b104c095d3ad8f60f8a732afccf9ef.jpg">
                                 <div class="card-body">
                                     <h5 class="card-title mb-3">
-                                        @item.Name
+                                        @item.BookName
+                                        @item.
                                     </h5>
-                                    <p class="card-text">
-                                        <b>@item.Price.ToString("C")</b>
-                                    </p>
+                                                    <p class="card-text">
+                                        <b> @item.CategoryName</b>
+                                     </p>
                                 </div>
-                            </div>
-                        </a>
+                           </div>
+                       </a>
                     </div>
                 }
-
             </div>
-
-
         }
     }
-    }
+}
+
+
+
